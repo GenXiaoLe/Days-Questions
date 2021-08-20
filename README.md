@@ -1,5 +1,5 @@
 ## Days Questions
-> Vue相关问题收集以及知识点总结(目前只有Vue)
+> 前端高频、热点知识点的收集、研究、学习
 
 - 🚀 源码相关
 - ✨ 高频重点
@@ -28,3 +28,7 @@
 16. ✨ 🚀 🤺 vue中nextTick的原理
 17. 🤺 vuex的理解和使用
 17. ✨ 🏄 🚧 watch和computed的区别
+
+
+### javaScript
+1. ✨ 手动实现防抖&节流
