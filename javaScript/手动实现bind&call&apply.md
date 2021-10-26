@@ -42,6 +42,7 @@
     // 去掉上下文参数
     let arr = [...arguments].slice(1)
     
+    _t.fn(...arr)
   }
 
   a.fn1._call(b, 10)

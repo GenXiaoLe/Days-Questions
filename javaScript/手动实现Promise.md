@@ -183,3 +183,33 @@ class MyPromise {
 ```
 
 这样基本上promise的改造就完成了。
+
+### 基于Promise实现各种原生方法
+
+#### Promise.all
+```
+Promise.prototype._all = function (promises) {
+  return new Promise((resolve, reject) => {
+    let promiseLen = promises.length
+    let promiseCount = 0
+    let values = new Array(promiseLen)
+
+    for (let i = 0; i < promiseLen; i++) {
+      (function(v) {
+        const promise = promises[v]
+
+        Promise.resolve(promise).then(value => {
+          values[v] = value
+          promiseCount++
+
+          if (promiseCount === promiseLen) {
+            return resolve(values)
+          }
+        }, error => {
+          return reject(error)
+        })
+      })(i)
+    }
+  })
+}
+```
